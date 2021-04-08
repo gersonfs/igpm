@@ -33,7 +33,7 @@ $linhas = "";
 unset($dados[0]);
 foreach($dados as $dado) {
 	for($i = 1; $i <= 12; $i++) {
-		$taxa = str_replace(',', '.', $dado[$i]) * 1;
+		$taxa = ((float)str_replace(',', '.', $dado[$i])) * 1;
 		$linhas .= $dado[0] . "\t" . $i . "\t" . number_format(round($taxa / 100, 8), 8, ",", "") . "\n";
 	}
 }
